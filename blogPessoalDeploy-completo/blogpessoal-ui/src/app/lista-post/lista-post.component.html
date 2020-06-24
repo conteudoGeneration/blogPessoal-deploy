@@ -1,0 +1,29 @@
+<h3 class="text-monospace text-center">Minhas postagens</h3>
+
+            <div class="card mt-5" *ngFor="let postagem of listaPostagens | orderBy : key : reverse">
+
+                <div class="card-header">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-md-8">
+                            <h5 class="card-title ">{{postagem.titulo}} </h5>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-end">
+
+                            <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar', postagem.id]">
+                                Editar
+                            </button>
+
+                            <button [routerLink]="['/delete', postagem.id]" class="btn btn-outline-danger ml-3">
+                                Apagar
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body" >
+                  <p class="card-text" aria-describedby="texto">{{postagem.texto}} </p>
+                  <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
+                    Postado em {{ postagem.data | date:'dd/MM/yyyy'}} às {{postagem.data | date:'HH:mm'}}</small>
+                </div>
+            </div>

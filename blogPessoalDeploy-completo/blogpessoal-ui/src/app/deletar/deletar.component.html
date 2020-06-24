@@ -1,0 +1,75 @@
+<div class="container">
+
+   <div class="row mt-5 mb-5">
+
+      <div class="col-md-4">
+
+         <div class="card border-0" style="width: 18rem;">
+            
+            <div class="d-flex justify-content-center">
+               <img class="card-img-top rounded-circle w-75" src="https://i.imgur.com/Mn3W7Pq.jpg" alt="Imagem de capa do card">
+            </div>
+            
+
+            <div class="card-body">
+              <h5 class="card-title text-center">Thiago Veiga Lima</h5>
+
+              <p class="card-text text-center">Instrutor de desenvolvimento Web Front-end na Generation Brasil</p>
+
+              <a href="https://www.linkedin.com/in/limasthiagos/" class="btn btn-outline-info d-flex justify-content-center mb-3" target="_blank">LinkedIn</a>
+
+              <a href="https://github.com/limathiagos" class="btn btn-outline-dark d-flex justify-content-center" target="_blank">GitHub</a>
+
+            </div>
+          </div>
+
+      </div>
+
+      <div class="col-md-8">
+
+         <div>
+            <h3 class="text-center mb-4 text-monospace">Deletar postagem</h3>
+         </div>
+
+         <div class="card mb-4">
+
+            <div class="card-header">                
+               <h5 class="card-title"> {{ postagem.titulo }} </h5> 
+            </div>
+
+            <div class="card-body">
+               <p class="card-text">{{ postagem.texto }}</p>
+               
+               <small class="form-text m-0 text-muted mb-3 text-monospace">
+
+                 Postado em {{ postagem.data | date: 'dd/MM/yyyy' }} 
+                 às {{ postagem.data | date: 'HH:mm' }}
+               
+               </small>               
+            </div>
+
+         </div>
+
+         <hr class="mt-5 mb-5">
+
+         <div class="row">
+            <div class="col-md-12">
+               <h5 class="text-monospace text-center mb-5">Tem certeza que deseja apagar essa postagem?</h5>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+
+               <button class="btn btn-outline-success mr-3" (click)="btnSim()">Sim</button>
+
+               <button class="btn btn-outline-danger" (click)="btnNao()">Não</button>
+
+            </div>
+         </div>
+         
+      </div>
+
+   </div>
+
+</div>
